@@ -1,10 +1,7 @@
-# Pollard's Rho Algorithm for SECP256K1 Curve (Beta)
+# Pollard's Rho Algorithm for SECP256K1 Curve (Alpha)
 
-![C++](https://img.shields.io/badge/language-C++-blue)
-![CUDA](https://img.shields.io/badge/language-CUDA-green)
-![CUDA](https://img.shields.io/badge/arch-gpu%20&%20cpu-orange)
-![Linux](https://img.shields.io/badge/platform-Linux-white)
-
+Ported from CUDA to HIP using Rocm / HIPFIY (hipify-perl)
+https://github.com/ROCm/HIPIFY
 ## Description
 
 This repository contains the implementation of Pollard's Rho algorithm for the secp256k1 elliptic curve. The goal is to generate pseudorandom private keys with search complexity O√n using the tortoise/hare race method. To run the program, you need the public key of your Bitcoin wallet.
@@ -15,10 +12,7 @@ The expected time complexity of Pollard's Rho algorithm for elliptic curves is <
 
 #### Prerequisites
 
-- g++
-- build-essential
-- nvidia-cuda-runtime-13-0
-- nvidia-cuda-toolkit-13-0
+???
 
 ---
 
@@ -31,17 +25,20 @@ The expected time complexity of Pollard's Rho algorithm for elliptic curves is <
 
 2. Install the necessary libraries:
     ```bash
-    sudo apt-get update
-    sudo apt-get upgrade
-    sudo apt install build-essential g++ -y
-    sudo apt install nvidia-cuda-runtime-13-0 -y
-    sudo apt install nvidia-cuda-toolkit-13-0 -y
+    ???
     ```
 
 3. Compile the project:
     ```bash
-    ~/$cd pollardsrho
-    ~/pollardsrho$ make
+    ~/$cd pollardsrho-hip
+    # Build with auto-detection
+make -f Makefile.hip
+
+# Or specify your GPU explicitly (example)
+make -f Makefile.hip GPU_ARCH=gfx906
+
+# Run it
+./pollardsrho-hip
     ```
 
 4. Run the program:
