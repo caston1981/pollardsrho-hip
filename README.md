@@ -42,21 +42,22 @@ The expected time complexity of Pollard's Rho algorithm for elliptic curves is <
     ```
 
 4. Run the program:
+
     ```bash
-    ~/pollardsrho$ ./pollardsrho-hip <compressed public key> <key range>
+    ~/pollardsrho-hip$ ./pollardsrho-hip <compressed public key> <key range>
     ```
 
     Replace `<compressed public key>` with the point \(G\) on the secp256k1 curve multiplied by your private key value, and `<key range>` with the size of the search interval for \(k\).
 
     Example usage:
     ```bash
-    ~/pollardsrho$ ./pollardsrho-hip 02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16 135
+    ~/pollardsrho-hip$ ./pollardsrho-hip 02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16 135
     ```
 
 ## Commands
 
-- `~/pollardsrho$ ./pollardsrho <compressed public key> <key range>`: Starts the search for the private key corresponding to the given public key.
-- `~/pollardsrho$ ./pollardsrho <compressed public key> <key range> --t`: Starts searching for the private key corresponding to the public key provided in test mode for ranges equal to or less than 20 bits.
+- `~/pollardsrho-hip$ ./pollardsrho <compressed public key> <key range>`: Starts the search for the private key corresponding to the given public key.
+- `~/pollardsrho-hip$ ./pollardsrho <compressed public key> <key range> --t`: Starts searching for the private key corresponding to the public key provided in test mode for ranges equal to or less than 20 bits.
 
 ## External Libraries Used
 
