@@ -38,6 +38,7 @@ The expected time complexity of Pollard's Rho algorithm for elliptic curves is <
     make -f Makefile.hip GPU_ARCH=gfx906
 
 # Run it
+    ```bash
     ./pollardsrho-hip
     ```
 
